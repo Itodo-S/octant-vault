@@ -5,7 +5,11 @@ import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-export function DashboardSidebar() {
+interface DashboardSidebarProps {
+  onCreateVault?: () => void
+}
+
+export function DashboardSidebar({ onCreateVault }: DashboardSidebarProps) {
   const pathname = usePathname()
 
   const navItems = [
@@ -27,7 +31,9 @@ export function DashboardSidebar() {
           <span className="font-bold text-xl">Dashboard</span>
         </Link>
 
-        <Button className="w-full bg-primary hover:bg-primary/90 mb-8">+ Create Vault</Button>
+        <Button onClick={onCreateVault} className="w-full bg-primary hover:bg-primary/90 mb-8">
+          + Create Vault
+        </Button>
 
         <nav className="space-y-2">
           {navItems.map((item) => (
