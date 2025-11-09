@@ -34,9 +34,17 @@ app.use(cors({
 			// In development, allow all localhost origins
 			if (process.env.NODE_ENV === 'development' && origin.includes('localhost')) {
 				callback(null, true)
-			} else {
-				callback(new Error('Not allowed by CORS'))
+				return
 			}
+
+			// In production, allow Vercel-hosted frontends (e.g. <name>.vercel.app)
+			if (process.env.NODE_ENV === 'production' && typeof origin === 'string' && origin.endsWith('.vercel.app')) {
+				callback(null, true)
+				return
+			}
+
+			// Otherwise reject
+			callback(new Error('Not allowed by CORS'))
 		}
 	},
 	credentials: true,

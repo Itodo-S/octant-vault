@@ -14,6 +14,7 @@ export class ApiClient {
 	private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
 		const response = await fetch(`${this.baseUrl}${endpoint}`, {
 			...options,
+			credentials: 'include',
 			headers: {
 				'Content-Type': 'application/json',
 				...options?.headers,
@@ -89,4 +90,3 @@ export class ApiClient {
 }
 
 export const apiClient = new ApiClient()
-
