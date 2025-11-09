@@ -1,0 +1,38 @@
+{
+	"name": "octantvault-contracts",
+	"version": "1.0.0",
+	"description": "Smart contracts for OctantVault",
+	"main": "index.js",
+	"scripts": {
+		"compile": "hardhat compile",
+		"test": "hardhat test",
+    "deploy:ethereum": "hardhat run scripts/deploy-spark.ts --network ethereum-mainnet",
+    "deploy:gnosis": "hardhat run scripts/deploy-spark.ts --network gnosis-chain",
+    "deploy:base-sepolia": "hardhat run scripts/deploy.ts --network base-sepolia",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "populate:base-sepolia": "hardhat run scripts/populate-test-data-simple.ts --network base-sepolia",
+    "populate:local": "hardhat run scripts/populate-test-data-simple.ts --network localhost",
+    "populate:full:base-sepolia": "hardhat run scripts/populate-test-data.ts --network base-sepolia",
+    "populate:full:local": "hardhat run scripts/populate-test-data.ts --network localhost",
+    "deploy:test-usdc": "hardhat run scripts/deploy-test-usdc.ts --network base-sepolia",
+    "mint:test-usdc": "hardhat run scripts/mint-test-usdc.ts --network base-sepolia",
+    "register:spark-config": "hardhat run scripts/register-spark-config.ts --network base-sepolia",
+		"node": "hardhat node",
+		"clean": "hardhat clean",
+		"verify": "hardhat run scripts/verify.ts"
+	},
+	"devDependencies": {
+		"@nomicfoundation/hardhat-toolbox": "^5.0.0",
+		"@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+		"@openzeppelin/contracts": "^5.1.0",
+		"@openzeppelin/contracts-upgradeable": "^5.1.0",
+		"hardhat": "^2.22.0",
+		"typescript": "^5.0.0",
+		"ts-node": "^10.9.2",
+		"chai": "^4.4.1"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.5"
+	}
+}
+
