@@ -45,6 +45,10 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.get('/', (_, res) => {
+	res.send('Welcome to the Octant Vault Backend API')
+})
+
 // Health check
 app.get('/health', (req, res) => {
 	res.json({ status: 'ok', timestamp: new Date().toISOString() })
