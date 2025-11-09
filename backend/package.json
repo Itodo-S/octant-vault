@@ -1,0 +1,33 @@
+{
+	"name": "octantvault-backend",
+	"version": "1.0.0",
+	"description": "Backend API for OctantVault - Indexing blockchain events and serving data",
+	"main": "dist/index.js",
+	"scripts": {
+		"dev": "tsx watch src/index.ts",
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"lint": "eslint src --ext .ts",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"mongoose": "^8.0.3",
+		"dotenv": "^16.3.1",
+		"cors": "^2.8.5",
+		"helmet": "^7.1.0",
+		"ethers": "^6.15.0",
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.21",
+		"@types/node": "^20.10.6",
+		"@types/cors": "^2.8.17",
+		"@typescript-eslint/eslint-plugin": "^6.17.0",
+		"@typescript-eslint/parser": "^6.17.0",
+		"eslint": "^8.56.0",
+		"tsx": "^4.7.1",
+		"typescript": "^5.3.3"
+	}
+}
+
