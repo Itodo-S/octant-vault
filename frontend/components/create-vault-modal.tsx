@@ -107,7 +107,7 @@ export function CreateVaultModal({ open, onOpenChange }: CreateVaultModalProps) 
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="regular">Regular Vault</SelectItem>
-                <SelectItem value="spark">Spark Vault (Spark Protocol Integration)</SelectItem>
+                <SelectItem value="regular">Spark Vault (Spark Protocol Integration)</SelectItem>
               </SelectContent>
             </Select>
             <p className="text-xs text-foreground/50 mt-1">
